@@ -8,10 +8,10 @@ export async function POST(request: NextRequest) {
     // Create the redirect URL with the secret
     const redirectUrl = `vidahealthcoach://auth/callback?secret=${encodeURIComponent(secret.toString())}`;
     
-    // Return a redirect response
-    return NextResponse.redirect(redirectUrl);
+    // Return a redirect response with status 302
+    return NextResponse.redirect(redirectUrl, { status: 302 });
   } catch (error) {
     console.error('Error processing Vida Health Coach redirect:', error);
-    return NextResponse.redirect(new URL('/', request.url));
+    return NextResponse.redirect(new URL('/', request.url), { status: 302 });
   }
 } 
