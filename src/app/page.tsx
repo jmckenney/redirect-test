@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -49,6 +50,17 @@ export default function Home() {
           >
             Read our docs
           </a>
+        </div>
+
+        <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm">
+          <h1 className="text-4xl font-bold mb-8">SSO Redirect Test</h1>
+          <p className="mb-8">Click the button below to test the Zoom SSO redirect:</p>
+          <Link
+            href="/redirect"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Test Redirect
+          </Link>
         </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
